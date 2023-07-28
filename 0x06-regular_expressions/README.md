@@ -1,54 +1,47 @@
-# Regular expression
+![img](https://assets.imaginablefutures.com/media/images/ALX_Logo.max-200x150.png)
+  > Regular expressions
 
-In this project, I learned how to use regular expressions. I practiced building
-them using Ruby's Oniguruma library.
+![meme](https://intranet.alxswe.com/images/contents/sysadmin/concepts/29/regex_now_2_problems.jpg)
 
-All code in this directory was tested using [Rubular](https://rubular.com/). Rubular is a Ruby-based regular expression editor. It's a handy way to test regular expressions as you write them.
+## Intro 
+Regex is a powerful tool for text processing, and can be used in a variety of applications, including search and replace operations, data validation, and pattern matching. Through this project we  will learn the basics of regex syntax, how to write simple and complex regex patterns, and how to use regex in practical examples. The project is intended for those who have limited or no experience with regex and wish to learn more about this versatile tool, or those who have been using it for a while and would like to refresh their minds about some of the concepts
 
-## Tasks :page_with_curl:
+## Background context
+For this project, you have to build your regular expression using Oniguruma, a regular expression library that which is used by Ruby by default. Note that other regular expression libraries sometimes have different properties.
 
-_Note: Each Ruby script in the project matches regular expressions based on an
-argument passed to it via the command line._
+Because the focus of this exercise is to play with regular expressions (regex), here is the Ruby code that you should use, just replace the regexp part, meaning the code in between the ```//```
 
-* **0. Simply matching School**
-  * [0-simply_match_school.rb](./0-simply_match_school.rb): Ruby script that
-  matches the regular expression `School`.
+```
+itsfoss@itsfoss$ cat example.rb
+#!/usr/bin/env ruby
+puts ARGV[0].scan(/127.0.0.[0-9]/).join
+itsfoss@itsfoss$
+itsfoss@itsfoss$ ./example.rb 127.0.0.2
+127.0.0.2
+itfoss@itsfoss$ ./example.rb 127.0.0.1
+127.0.0.1
+itsfoss@itsfoss$ ./example.rb 127.0.0.a
+```
+## Resources
+__Read or Watch__:
+1. [Regular expressions - basics](https://www.slideshare.net/neha_jain/introducing-regular-expressions)
+2. [Regular expressions - advanced](https://www.slideshare.net/neha_jain/advanced-regular-expressions-80296518)
+3. [Rubular is your best friend](https://rubular.com/)
+3. [Use  a regular expression against a problem: now you have two problems](https://blog.codinghorror.com/regular-expressions-now-you-have-two-problems/)
+4. [Learn Regexs with simple interactive exercises](https://regexone.com/)
+5. [Regex101](https://regex101.com/)
+6. [Youtube](https://www.youtube.com/results?search_query=regex)
+7. [Google](https://www.google.com/search?q=regular+expressions)
 
-* **1. Repetition Token #0**
-  * [1-repetition_token_0.rb](./1-repetition_token_0.rb): Ruby script that matches
-  the regular expression `hbn` with between 2-5 `t`'s in between `hb` and `n`.
+## Requirements
+### General 
+- Allowed editors ```vi```, ```vim```, ```emacs```
+- All your files will be interpreted on Ubuntu 20.04 LTS
+- All your files should end with a new line
+- A ```README```.md file, at the root of the folder of the project, is mandatory
+- All your Bash script files must be executable
+- The first line of all your Bash scripts should be exactly ```#!/usr/bin/env ruby```
+- All your regex must be built for the Oniguruma library
 
-* **2. Repetition Token #1**
-  * [2-repetition_token_1.rb](./2-repetition_token_1.rb): Ruby script that matches
-  the regular expression `hn` with 0 or 1 occurrences of `b` and 0 or 1
-  occurrences of `t` in between `h` and `n`.
-
-* **3. Repetition Token #2**
-  * [3-repetition_token_2.rb](./3-repetition_token_2.rb): Ruby script that matches
-  the regular expression `hbn` with 1 or more `t`'s in between `hb` and `n`.
-
-* **4. Repetition Token #3**
-  * [4-repetition_token_3.rb](./4-repetition_token_3.rb): Ruby script that matches the
-  regular expression `hbn` with 0 or more `t`'s in between `hb` and `n`.
-
-* **5. Not quite HBTN yet**
-  * [5-beginning_and_end.rb](./5-beginning_and_end.rb): Ruby script that matches a
-  regular expression starting with `h` and ending with `n` with any single character in between.
-
-* **6. Call me maybe**
-  * [6-phone_number.rb](./6-phone_number.rb): Ruby script that matches a regular expression
-  representing a 10-digit phone number.
-
-* **7. OMG WHY ARE YOU SHOUTING?**
-  * [7-OMG_WHY_ARE_YOU_SHOUTING.rb](./7-OMG_WHY_ARE_YOU_SHOUTING.rb): Ruby script that
-  matches regular expressions of uppercase letters.
-
-* **8. Textme**
-  * [100-textme.rb](./100-textme.rb): Ruby script that runs statistics on TextMe app text
-  message transcations.
-  * Output: `[SENDER],[RECEIVER],[FLAGS]` where
-    * `[SENDER]` is the sender phone number or name (including country code
-    if present).
-    * `[RECEIVER]` is the receiver phone number or name (including country code
-    if present).
-    * `[FLAGS]` is the flags that were used.
+## Quiz
+[Quizes](./quiz.md)
