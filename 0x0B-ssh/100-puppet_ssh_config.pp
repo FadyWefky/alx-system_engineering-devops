@@ -1,13 +1,12 @@
-# enables connection to server without a password
+#!/usr/bin/env bash
+# Automating my Tasks using Puppet
 
-file_line {
-  'passAuth':
-  ensure => present,
-  path   => '/etc/ssh/ssh_config',
-  line   => '   PasswordAuthentication no'
-  ;
-  'keyLocation':
-  ensure => present,
-  path   => '/etc/ssh/ssh_config',
-  line   => '   IdentityFile ~/.ssh/holberton'
+file { '/etc/ssh/ssh_config':
+  ensure  => present,
+content => "
+    # SSH client configuration
+    Host *
+      IdentityFile ~/.ssh/school
+      PasswordAuthentication no
+  ",
 }
